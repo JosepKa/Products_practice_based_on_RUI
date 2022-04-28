@@ -76,7 +76,7 @@ void app_task(void * p_context)
     RUI_LOG_PRINTF("Battery Voltage = "NRF_LOG_FLOAT_MARKER" V !\r\n", NRF_LOG_FLOAT(voltage));
     memset(send_data,0,256); 
     sprintf(send_data,"Acc:%.2f,%.2f,%.2f; ",_x,_y,_z);
-    sprintf(send_data+strlen(send_data),"Tem:%.2f;Hum:%.2f; ",temp,humidity);
+    sprintf(send_data+strlen(send_data),""Temp":%.2f;Hum:%.2f; ",temp,humidity);
     sprintf(send_data+strlen(send_data),"Pre:%.2f; ",pressure);
     sprintf(send_data+strlen(send_data),"Lig:%.2f; ",light);
     sprintf(send_data+strlen(send_data),"Lat(0-N,1-S):%d,%s,Lon(0-E,1-W):%d,%s; ",g_gps_data.LatitudeNS,lat_data,g_gps_data.LongitudaEW,lon_data); 
